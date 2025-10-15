@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Уеб калкулатор</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="calculator-container">
+    <header>
+        <h1>Уеб калкулатор</h1>
+        <div class="theme-switcher">
+            <label for="theme-selector">Тема:</label>
+            <select id="theme-selector">
+                <option value="light">Светла</option>
+                <option value="dark">Тъмна</option>
+                <option value="blue">Синя</option>
+                <option value="green">Зелена</option>
+            </select>
+        </div>
+    </header>
+
+
+    <main>
+      <div class="calculator">
+        <div id="display" class="display">0</div>
+
+        <div class="buttons basic">
+          <button class="btn" data-action="clear">C</button>
+          <button class="btn" data-action="delete">CE</button>
+          <button class="btn" data-action="/">÷</button>
+          <button class="btn" data-action="*">×</button>
+
+          <button class="btn" data-action="7">7</button>
+          <button class="btn" data-action="8">8</button>
+          <button class="btn" data-action="9">9</button>
+          <button class="btn" data-action="-">−</button>
+
+          <button class="btn" data-action="4">4</button>
+          <button class="btn" data-action="5">5</button>
+          <button class="btn" data-action="6">6</button>
+          <button class="btn" data-action="+">+</button>
+
+          <button class="btn" data-action="1">1</button>
+          <button class="btn" data-action="2">2</button>
+          <button class="btn" data-action="3">3</button>
+          <button class="btn equal" data-action="=">=</button>
+
+          <button class="btn zero" data-action="0">0</button>
+          <button class="btn" data-action=".">.</button>
+          <button id="scientific-toggle" class="btn toggle">Научен режим</button>
+        </div>
+
+        <div id="scientific" class="buttons scientific hidden">
+          <button class="btn" data-action="sin(">sin</button>
+          <button class="btn" data-action="cos(">cos</button>
+          <button class="btn" data-action="tan(">tan</button>
+          <button class="btn" data-action="log(">log</button>
+          <button class="btn" data-action="ln(">ln</button>
+          <button class="btn" data-action="sqrt(">√</button>
+          <button class="btn" data-action="^2">x²</button>
+          <button class="btn" data-action="^3">x³</button>
+          <button class="btn" data-action="^">xʸ</button>
+          <button class="btn" data-action="π">π</button>
+          <button class="btn" data-action="e">e</button>
+          <button class="btn" data-action="!">n!</button>
+        </div>
+      </div>
+
+      <aside class="history-container">
+        <h2>История</h2>
+        <div id="history" class="history"></div>
+        <button id="clear-history" class="btn clear-history">Изчисти</button>
+      </aside>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

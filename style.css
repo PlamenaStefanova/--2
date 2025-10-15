@@ -1,0 +1,217 @@
+:root {
+  --bg-color: #f9f9f9;
+  --text-color: #222;
+  --btn-bg: #e0e0e0;
+  --btn-hover: #ccc;
+  --accent: #007bff;
+  --transition: all 0.3s ease;
+}
+
+/* ТЕМИ */
+/* Светла тема */
+/* Светла тема */
+.light-theme {
+  --bg-gradient: linear-gradient(135deg, #f7fafc, #e3eaf2); /* светъл, нежен синьо-сив градиент */
+  --background-color: #ffffff;
+  --text-color: #222222;
+  --accent: #3a86ff;
+}
+
+/* Тъмна тема */
+.dark-theme {
+  --bg-gradient: linear-gradient(135deg, #121212, #2c2c2c); /* дълбок тъмен градиент, почти черно към тъмно сиво */
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --accent: #ff5c5c;
+}
+
+
+/* Синя тема */
+.blue-theme {
+  --bg-gradient: linear-gradient(135deg, #89f7fe, #66a6ff);
+  --background-color: #e0f7fa;
+  --text-color: #003366;
+  --accent: #004aad;
+}
+
+/* Зелена тема */
+.green-theme {
+  --bg-gradient: linear-gradient(135deg, #a8e063, #56ab2f);
+  --background-color: #e8f5e9;
+  --text-color: #2e7d32;
+  --accent: #4caf50;
+}
+
+/* ОБЩИ СТИЛОВЕ */
+body {
+  background: var(--bg-gradient);
+  transition: background 0.8s ease;
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+header {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  justify-content: center;
+  background: var(--accent);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+header h1 {
+  margin: 0 0 10px 0;
+  font-size: 1.8em;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.theme-switcher {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-switcher label {
+  font-weight: bold;
+}
+
+.theme-switcher select {
+  font-size: 1em;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: none;
+  background-color: white;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-switcher select:hover {
+  transform: scale(1.05);
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.calculator {
+  background: var(--btn-bg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.display {
+  background: var(--bg-color);
+  color: var(--text-color);
+  border-radius: 10px;
+  padding: 15px;
+  text-align: right;
+  font-size: 2em;
+  margin-bottom: 15px;
+  overflow-x: auto;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 70px);
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn {
+  background-color: var(--btn-bg);
+  border: none;
+  border-radius: 10px;
+  font-size: 1.3em;
+  padding: 15px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background-color: var(--btn-hover);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.equal {
+  background: var(--accent);
+  color: white;
+}
+
+.equal:hover {
+  opacity: 0.9;
+}
+
+.zero {
+  grid-column: span 2;
+}
+
+.toggle {
+  grid-column: span 2;
+  background: var(--accent);
+  color: white;
+}
+
+.scientific.hidden {
+  display: none;
+}
+
+/* История */
+.history-container {
+  max-width: 250px;
+  flex: 1;
+}
+
+.history {
+  background: var(--bg-color);
+  border: 1px solid var(--btn-hover);
+  border-radius: 8px;
+  padding: 10px;
+  height: 300px;
+  overflow-y: auto;
+}
+
+.history-item {
+  padding: 5px;
+  border-bottom: 1px solid var(--btn-hover);
+  cursor: pointer;
+}
+
+.history-item:hover {
+  background-color: var(--btn-bg);
+}
+
+.clear-history {
+  margin-top: 10px;
+  width: 100%;
+  background: var(--accent);
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .buttons {
+    grid-template-columns: repeat(4, 60px);
+  }
+}
